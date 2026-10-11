@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        Every piece of user-facing text lives here rather than in Java or in a layout.
+        That keeps the UI translatable, lets the plurals below pick the right wording for a
+        count automatically, and means a wording change is one edit in one file.
+    -->
+
+    <string name="app_name">Smart Pantry</string>
+
+    <!-- ============================ Screen titles ============================ -->
+    <string name="title_pantry">My Pantry</string>
+    <string name="title_add_ingredient">Add Ingredient</string>
+    <string name="title_edit_ingredient">Edit Ingredient</string>
+    <string name="title_suggested">Suggested Recipes</string>
+    <string name="title_recipes">Recipe Book</string>
+    <string name="title_recipe_detail">Recipe</string>
+    <string name="title_settings">Settings</string>
+
+    <!-- ========================= Bottom navigation ========================== -->
+    <string name="nav_pantry">Pantry</string>
+    <string name="nav_suggested">Suggested</string>
+    <string name="nav_recipes">Recipes</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- ============================ Pantry list ============================= -->
+    <string name="hint_search_pantry">Search your pantry</string>
+    <string name="pantry_expires_on">Best before %1$s</string>
+    <string name="pantry_expired_on">Expired on %1$s</string>
+    <string name="pantry_expires_today">Expires today</string>
+    <plurals name="pantry_search_summary">
+        <item quantity="one">%1$d match for \"%2$s\"</item>
+        <item quantity="other">%1$d matches for \"%2$s\"</item>
+    </plurals>
+
+    <plurals name="pantry_expires_in_days">
+        <item quantity="one">Expires tomorrow</item>
+        <item quantity="other">Expires in %1$d days</item>
+    </plurals>
+
+    <plurals name="pantry_summary">
+        <item quantity="one">%1$d ingredient in your pantry</item>
+        <item quantity="other">%1$d ingredients in your pantry</item>
+    </plurals>
+
+    <plurals name="pantry_expiring_banner">
+        <item quantity="one">%1$d item expires within %2$d days — use it soon</item>
+        <item quantity="other">%1$d items expire within %2$d days — use them soon</item>
+    </plurals>
+
+    <!-- ========================= Add / edit form ============================ -->
+    <string name="label_name">Ingredient name</string>
+    <string name="label_quantity">Quantity</string>
+    <string name="label_unit">Unit</string>
+    <string name="label_expiry">Expiry date</string>
+    <string name="helper_name">Start typing — names used by the recipe book are suggested</string>
+    <string name="helper_expiry_optional">Optional. Tap to pick a date.</string>
+    <string name="helper_expiry_past">This date has already passed</string>
+
+    <string name="error_name_required">Please enter an ingredient name</string>
+    <string name="error_name_too_short">Name is too short</string>
+    <string name="error_name_letters">Name must contain at least one letter</string>
+    <string name="error_quantity_required">Please enter a quantity</string>
+    <string name="error_quantity_number">Quantity must be a number</string>
+    <string name="error_quantity_positive">Quantity must be greater than zero</string>
+    <string name="error_quantity_too_large">That quantity looks too large</string>
+    <string name="error_unit_required">Please choose a unit</string>
+
+    <string name="msg_item_added">Added %1$s to your pantry</string>
+    <string name="msg_item_updated">Updated %1$s</string>
+    <string name="msg_item_deleted">Deleted %1$s</string>
+    <string name="msg_save_failed">Could not save — please try again</string>
+    <string name="msg_delete_failed">Could not delete that item</string>
+
+    <!-- ========================= Suggested recipes ========================== -->
+    <plurals name="suggestion_header">
+        <item quantity="one">Matching %1$d pantry ingredient against %2$d recipes</item>
+        <item quantity="other">Matching %1$d pantry ingredients against %2$d recipes</item>
+    </plurals>
+
+    <string name="heading_ready_count">Ready to cook now (%1$d)</string>
+    <string name="heading_almost_count">Almost there — one ingredient short (%1$d)</string>
+    <string name="heading_almost_explainer">These are NOT suggestions. Each one still needs a shopping trip.</string>
+
+    <plurals name="suggestion_all_ingredients">
+        <item quantity="one">%1$d ingredient, all in your pantry</item>
+        <item quantity="other">All %1$d ingredients in your pantry</item>
+    </plurals>
+
+    <string name="suggestion_missing_one">Missing: %1$s</string>
+    <plurals name="suggestion_have_count">
+        <item quantity="one">You have %1$d of %2$d ingredient</item>
+        <item quantity="other">You have %1$d of %2$d ingredients</item>
+    </plurals>
+    <string name="suggestion_approximate_note">Quantity could not be compared for one ingredient — check before you start</string>
+
+    <!-- ============================ Recipe rows ============================= -->
+    <string name="recipe_meta">%1$s · %2$d min · serves %3$d</string>
+    <!-- "more" does not inflect with the count, so a plural would be two identical strings. -->
+    <string name="recipe_more_ingredients" tools:ignore="PluralsCandidate"> + %1$d more</string>
+
+    <plurals name="recipe_book_header">
+        <item quantity="one">%1$d recipe in the book</item>
+        <item quantity="other">%1$d recipes in the book</item>
+    </plurals>
+
+    <!-- =========================== Recipe detail ============================ -->
+    <string name="detail_can_cook">You can cook this right now — every ingredient is in your pantry</string>
+
+    <plurals name="detail_cannot_cook">
+        <item quantity="one">Not yet — you still need %2$s</item>
+        <item quantity="other">Not yet — you still need %1$d ingredients: %2$s</item>
+    </plurals>
+
+    <string name="detail_ingredients_heading">Ingredients</string>
+    <string name="detail_method_heading">Method</string>
+    <string name="detail_go_to_pantry">Add the missing items</string>
+    <string name="status_missing">Not in your pantry</string>
+    <string name="status_not_enough">You only have %1$s</string>
+    <string name="status_approximate">In your pantry, but in a different unit</string>
+    <string name="join_and"> and </string>
+
+    <!-- ============================== Settings ============================== -->
+    <string name="settings_heading_expiry">Expiry alerts</string>
+    <string name="settings_expiry_alerts">Highlight items expiring soon</string>
+    <string name="settings_expiry_alerts_detail">Tints the pantry list and shows a warning banner</string>
+    <string name="settings_expiry_window">How soon counts as \"soon\"</string>
+
+    <plurals name="settings_expiry_window_value">
+        <item quantity="one">%1$d day ahead</item>
+        <item quantity="other">%1$d days ahead</item>
+    </plurals>
+
+    <string name="settings_heading_matching">Recipe matching</string>
+    <string name="settings_strict_quantities">Check quantities as well as names</string>
+    <string name="settings_strict_quantities_detail">On: a recipe needs the full amount. Off: having the ingredient at all is enough.</string>
+    <string name="settings_almost_there">Show the \"Almost There\" list</string>
+    <string name="settings_almost_there_detail">A separate section for recipes that are one ingredient short</string>
+
+    <string name="settings_heading_data">Your data</string>
+    <string name="settings_clear_pantry">Clear the whole pantry</string>
+    <string name="settings_clear_pantry_detail">Deletes every ingredient. Recipes are not affected.</string>
+    <string name="settings_restore_recipes">Restore the recipe book</string>
+    <string name="settings_restore_recipes_detail">Re-seeds the 20 bundled recipes</string>
+
+    <string name="settings_heading_about">About</string>
+    <!-- Two independent counts; a plural can only be keyed on one of them. -->
+    <string name="settings_storage_summary" tools:ignore="PluralsCandidate">Stored locally: %1$d pantry items, %2$d recipes</string>
+    <string name="settings_about_body">Smart Pantry Manager keeps everything on this device in a SQLite database (%1$s). It requests no permissions, uses no location or mapping services, and works entirely offline.</string>
+
+    <string name="msg_pantry_already_empty">Your pantry is already empty</string>
+    <string name="msg_recipes_restored">Recipe book restored</string>
+
+    <plurals name="msg_pantry_cleared">
+        <item quantity="one">Removed %1$d ingredient</item>
+        <item quantity="other">Removed %1$d ingredients</item>
+    </plurals>
+
+    <!-- ============================== Dialogs =============================== -->
+    <string name="dialog_delete_title">Delete this item?</string>
+    <string name="dialog_delete_message">%1$s will be removed from your pantry.</string>
+    <string name="dialog_duplicate_title">Already in your pantry</string>
+    <string name="dialog_duplicate_message">You already have an entry for %1$s. Add this as a second entry anyway?</string>
+    <string name="dialog_clear_pantry_title">Clear the pantry?</string>
+
+    <plurals name="dialog_clear_pantry_message">
+        <item quantity="one">This deletes %1$d ingredient and cannot be undone.</item>
+        <item quantity="other">This deletes all %1$d ingredients and cannot be undone.</item>
+    </plurals>
+
+    <string name="dialog_restore_recipes_title">Restore the recipe book?</string>
+    <string name="dialog_restore_recipes_message">The 20 bundled recipes will be written again. Your pantry is not touched.</string>
+    <string name="dialog_rule_title">How suggestions are chosen</string>
+    <string name="dialog_rule_message">A recipe is only suggested when EVERY ingredient it needs is already in your pantry, in at least the required amount.\n\nIf a recipe needs five ingredients and you have four, it will not appear here — no shopping trip should be needed for anything on this list.\n\nNames are matched flexibly, so \"tomatoes\" matches \"tomato\", and units are converted, so 500 g covers 0.5 kg.\n\nThe \"Almost There\" section below is kept separate on purpose: those recipes are one ingredient short and are not suggestions.</string>
+
+    <!-- ============================== Actions =============================== -->
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_restore">Restore</string>
+    <string name="action_undo">Undo</string>
+    <string name="action_add_anyway">Add anyway</string>
+    <string name="action_got_it">Got it</string>
+    <string name="action_search">Search</string>
+    <string name="action_sort">Sort</string>
+    <string name="action_sort_name">Name (A–Z)</string>
+    <string name="action_sort_expiry">Expiry date</string>
+    <string name="action_sort_recent">Recently added</string>
+    <string name="action_view_suggestions">What can I cook?</string>
+    <string name="action_how_it_works">How suggestions work</string>
+    <string name="action_add_ingredient">Add an ingredient</string>
+
+    <!-- ============================ Empty states ============================ -->
+    <string name="empty_pantry_message">Your pantry is empty. Add the ingredients you already have at home and this app will tell you what you can cook with them.</string>
+    <string name="empty_search_message">Nothing in your pantry matches \"%1$s\".</string>
+    <string name="empty_suggestions_message">No recipes match your pantry yet — add more ingredients and check back.</string>
+    <string name="empty_suggestions_no_pantry">Your pantry is empty, so there is nothing to match yet. Add a few ingredients to get started.</string>
+    <string name="empty_suggestions_almost">Nothing is fully covered yet, but you are one ingredient away from the recipes listed below.</string>
+    <string name="empty_recipe_book_message">The recipe book is empty. Restore it from Settings.</string>
+
+    <!-- ======================= Content descriptions ========================= -->
+    <string name="cd_delete_item">Delete %1$s</string>
+    <string name="cd_empty_illustration">Empty list illustration</string>
+    <string name="cd_ingredient_status">Ingredient availability</string>
+    <string name="cd_add_ingredient">Add an ingredient</string>
+</resources>
