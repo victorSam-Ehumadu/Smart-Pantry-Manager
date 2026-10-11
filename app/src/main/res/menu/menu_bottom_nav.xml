@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    The app's navigation element (Section 3.1): a bottom navigation bar shared by the four
+    top-level screens. BaseActivity maps each item id to an Activity and starts it with an
+    explicit Intent.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_pantry"
+        android:icon="@drawable/ic_pantry"
+        android:title="@string/nav_pantry" />
+    <item
+        android:id="@+id/nav_suggested"
+        android:icon="@drawable/ic_suggested"
+        android:title="@string/nav_suggested" />
+    <item
+        android:id="@+id/nav_recipes"
+        android:icon="@drawable/ic_recipes"
+        android:title="@string/nav_recipes" />
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/nav_settings" />
+</menu>
