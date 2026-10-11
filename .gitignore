@@ -1,0 +1,25 @@
+# Android / Gradle build output
+*.iml
+.gradle/
+build/
+app/build/
+local.properties
+.cxx/
+captures/
+output.json
+
+# Android Studio / IntelliJ
+.idea/
+*.hprof
+.navigation/
+
+# Keystores & signing
+*.jks
+*.keystore
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# The assignment brief itself is the lecturer's material, not project source.
+docs/
