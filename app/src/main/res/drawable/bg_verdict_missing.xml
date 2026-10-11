@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Rounded background for the recipe-detail warning badge/banner. Drawn as a shape rather than a bitmap so
+     it stays sharp at any density and picks up the themed colour automatically. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/badge_almost_bg" />
+    <corners android:radius="12dp" />
+    <padding
+        android:left="10dp"
+        android:top="6dp"
+        android:right="10dp"
+        android:bottom="6dp" />
+</shape>
