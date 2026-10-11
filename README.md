@@ -148,8 +148,8 @@ re-reads the database in `onResume()` — nothing is held in memory between sess
 
 1. Clone the repository:
    ```bash
-   git clone <your-repository-url>
-   cd 402309985_MAD700_Assignment
+   git clone https://github.com/victorSam-Ehumadu/Smart-Pantry-Manager.git
+   cd Smart-Pantry-Manager
    ```
 2. In Android Studio choose **File -> Open** and select the project folder (the one
    containing `settings.gradle`). The Gradle wrapper is included, so Gradle itself does not
