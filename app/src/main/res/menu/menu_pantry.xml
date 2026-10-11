@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Toolbar menu for the pantry list: a search field plus a single-choice sort group. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/action_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@drawable/ic_sort"
+        android:title="@string/action_sort"
+        app:showAsAction="ifRoom">
+        <menu>
+            <!-- checkableBehavior="single" gives the group radio-button semantics, so the
+                 current sort order is always visible and exactly one is ever ticked. -->
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/action_sort_name"
+                    android:title="@string/action_sort_name" />
+                <item
+                    android:id="@+id/action_sort_expiry"
+                    android:title="@string/action_sort_expiry" />
+                <item
+                    android:id="@+id/action_sort_recent"
+                    android:title="@string/action_sort_recent" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_view_suggestions"
+        android:title="@string/action_view_suggestions"
+        app:showAsAction="never" />
+</menu>
