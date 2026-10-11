@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    One pantry row, inflated by PantryAdapter.
+
+    A ConstraintLayout keeps the hierarchy flat - name, quantity and expiry are siblings
+    rather than nested rows - which is what makes a long list cheap to measure while
+    scrolling. The whole row is clickable (edit) and the trailing button deletes.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:minHeight="72dp"
+    android:paddingStart="@dimen/space_m"
+    android:paddingTop="@dimen/space_s"
+    android:paddingEnd="@dimen/space_s"
+    android:paddingBottom="@dimen/space_s">
+
+    <TextView
+        android:id="@+id/textPantryName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="@color/text_primary"
+        app:layout_constraintEnd_toStartOf="@id/textPantryQuantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Cheddar cheese" />
+
+    <TextView
+        android:id="@+id/textPantryQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_s"
+        android:textAppearance="?attr/textAppearanceTitleSmall"
+        android:textColor="@color/brand_primary"
+        app:layout_constraintBaseline_toBaselineOf="@id/textPantryName"
+        app:layout_constraintEnd_toStartOf="@id/buttonDeleteItem"
+        tools:text="250 g" />
+
+    <TextView
+        android:id="@+id/textPantryExpiry"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        app:layout_constraintEnd_toStartOf="@id/buttonDeleteItem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textPantryName"
+        tools:text="Expires in 2 days"
+        tools:textColor="@color/expiring_soon" />
+
+    <ImageButton
+        android:id="@+id/buttonDeleteItem"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/action_delete"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_secondary" />
+</androidx.constraintlayout.widget.ConstraintLayout>

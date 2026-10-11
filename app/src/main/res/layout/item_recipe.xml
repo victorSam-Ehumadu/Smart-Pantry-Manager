@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One row of the recipe book, inflated by RecipeAdapter. No matching is applied here. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="@dimen/space_m">
+
+    <TextView
+        android:id="@+id/textRecipeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="@color/text_primary"
+        tools:text="Mince Bolognese" />
+
+    <TextView
+        android:id="@+id/textRecipeMeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        android:textColor="@color/brand_primary"
+        tools:text="Dinner · 40 min · serves 4" />
+
+    <TextView
+        android:id="@+id/textRecipeIngredients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="@color/text_secondary"
+        tools:text="Ground beef, Tomatoes, Tomato paste, Onion + 3 more" />
+</LinearLayout>

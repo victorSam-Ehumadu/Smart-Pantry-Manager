@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    One line of the recipe detail checklist, inflated by IngredientStatusAdapter.
+
+    The leading icon carries the matcher's verdict for this single ingredient, which is the
+    clearest on-screen proof that the strict rule is evaluated per ingredient rather than as
+    one all-or-nothing string comparison.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/space_s"
+    android:paddingBottom="@dimen/space_s">
+
+    <ImageView
+        android:id="@+id/imageStatus"
+        android:layout_width="@dimen/icon_medium"
+        android:layout_height="@dimen/icon_medium"
+        android:contentDescription="@string/cd_ingredient_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textStatusName"
+        app:layout_constraintBottom_toBottomOf="@id/textStatusName"
+        tools:src="@drawable/ic_check" />
+
+    <TextView
+        android:id="@+id/textStatusName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_m"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        android:textColor="@color/text_primary"
+        app:layout_constraintEnd_toStartOf="@id/textStatusAmount"
+        app:layout_constraintStart_toEndOf="@id/imageStatus"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Ground beef" />
+
+    <TextView
+        android:id="@+id/textStatusAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_s"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintBaseline_toBaselineOf="@id/textStatusName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="500 g" />
+
+    <TextView
+        android:id="@+id/textStatusDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_m"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageStatus"
+        app:layout_constraintTop_toBottomOf="@id/textStatusName"
+        tools:text="Not in your pantry"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>
