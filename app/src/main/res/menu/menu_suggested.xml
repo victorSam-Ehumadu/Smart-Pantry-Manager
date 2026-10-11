@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Explains the strict-matching rule in plain language, in the app itself. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_how_it_works"
+        android:icon="@drawable/ic_info"
+        android:title="@string/action_how_it_works"
+        app:showAsAction="ifRoom" />
+</menu>

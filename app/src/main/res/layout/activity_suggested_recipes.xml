@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Screen 3: Suggested Recipes.
+
+    The two results sets are two separate RecyclerViews inside one NestedScrollView, not one
+    list with mixed row types. That is a deliberate reading of Section 2.3: the strict
+    suggestions and the optional "Almost There" recipes must be clearly separated, and
+    separate lists fed by separate matcher methods make it structurally impossible for an
+    "almost" recipe to appear among the strict suggestions.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/suggestedRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/Widget.SmartPantry.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/space_l">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textSuggestionHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space_m"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="@color/text_secondary"
+                        tools:text="Matching 7 pantry ingredients against 20 recipes" />
+
+                    <!--
+                        Zero-matches feedback. It sits INSIDE the scrolling column rather than
+                        floating over it, because the strict list can be empty while the
+                        "Almost There" section below still has rows - an overlay would cover
+                        them. SuggestedRecipesActivity picks the wording to match the reason.
+                    -->
+                    <include
+                        layout="@layout/view_empty_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_l"
+                        android:layout_marginBottom="@dimen/space_l" />
+
+                    <!-- ===== The strict list ===== -->
+                    <TextView
+                        android:id="@+id/textReadyHeading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/space_m"
+                        android:paddingEnd="@dimen/space_m"
+                        android:paddingBottom="@dimen/space_xs"
+                        android:textAppearance="@style/TextAppearance.SmartPantry.SectionHeading"
+                        tools:text="Ready to cook now (3)" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerReady"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_recipe_match" />
+
+                    <!-- ===== The optional bonus list, under its own heading ===== -->
+                    <LinearLayout
+                        android:id="@+id/sectionAlmost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="@dimen/space_m"
+                            android:layout_marginTop="@dimen/space_l"
+                            android:layout_marginEnd="@dimen/space_m"
+                            android:background="@color/divider" />
+
+                        <TextView
+                            android:id="@+id/textAlmostHeading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/space_m"
+                            android:paddingTop="@dimen/space_m"
+                            android:paddingEnd="@dimen/space_m"
+                            android:textAppearance="@style/TextAppearance.SmartPantry.SectionHeading"
+                            tools:text="Almost there — one ingredient short (4)" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/space_m"
+                            android:paddingEnd="@dimen/space_m"
+                            android:paddingBottom="@dimen/space_xs"
+                            android:text="@string/heading_almost_explainer"
+                            android:textAppearance="?attr/textAppearanceBodySmall"
+                            android:textColor="@color/text_secondary" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerAlmost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:itemCount="1"
+                            tools:listitem="@layout/item_recipe_match" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </FrameLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/menu_bottom_nav" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
