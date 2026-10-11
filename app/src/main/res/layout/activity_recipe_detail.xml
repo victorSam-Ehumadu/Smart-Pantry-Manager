@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Screen 5: recipe detail.
+
+    The toolbar is pinned and the body below it scrolls, because the method can be longer
+    than the screen. The ingredient checklist is a RecyclerView with nested scrolling
+    disabled, so it measures to its full height and scrolls together with the method text as
+    one page rather than becoming a small scrolling box of its own.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recipeDetailRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.SmartPantry.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Only the body scrolls; the toolbar stays put so the recipe title and the Up arrow
+         remain reachable while reading a long method. -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textDetailName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_m"
+                android:paddingTop="@dimen/space_m"
+                android:paddingEnd="@dimen/space_m"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="@color/text_primary"
+                tools:text="Leftover Veg Fried Rice" />
+
+            <TextView
+                android:id="@+id/textDetailMeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_m"
+                android:paddingTop="@dimen/space_xs"
+                android:paddingEnd="@dimen/space_m"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="@color/text_secondary"
+                tools:text="Dinner, 20 min, serves 3" />
+
+            <!-- The matcher's overall verdict for this recipe against the current pantry. -->
+            <TextView
+                android:id="@+id/textDetailVerdict"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_m"
+                android:background="@drawable/bg_verdict_ready"
+                android:padding="@dimen/space_m"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                tools:text="You can cook this right now - every ingredient is in your pantry" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonGoToPantry"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_m"
+                android:layout_marginEnd="@dimen/space_m"
+                android:text="@string/detail_go_to_pantry"
+                android:visibility="gone"
+                app:icon="@drawable/ic_add"
+                tools:visibility="visible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_m"
+                android:paddingTop="@dimen/space_l"
+                android:paddingEnd="@dimen/space_m"
+                android:text="@string/detail_ingredients_heading"
+                android:textAppearance="@style/TextAppearance.SmartPantry.SectionHeading" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_m"
+                android:paddingTop="@dimen/space_s"
+                android:paddingEnd="@dimen/space_m"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_ingredient_status" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_m"
+                android:paddingTop="@dimen/space_l"
+                android:paddingEnd="@dimen/space_m"
+                android:text="@string/detail_method_heading"
+                android:textAppearance="@style/TextAppearance.SmartPantry.SectionHeading" />
+
+            <TextView
+                android:id="@+id/textDetailSteps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:paddingStart="@dimen/space_m"
+                android:paddingTop="@dimen/space_s"
+                android:paddingEnd="@dimen/space_m"
+                android:paddingBottom="@dimen/space_xl"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="@color/text_primary"
+                tools:text="1. Heat the oil in a wok." />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
