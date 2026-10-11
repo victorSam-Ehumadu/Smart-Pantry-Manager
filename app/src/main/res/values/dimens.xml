@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- One scale of spacing, reused everywhere, so the screens line up with each other. -->
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_s">8dp</dimen>
+    <dimen name="space_m">16dp</dimen>
+    <dimen name="space_l">24dp</dimen>
+    <dimen name="space_xl">32dp</dimen>
+
+    <dimen name="card_corner">12dp</dimen>
+    <dimen name="icon_medium">24dp</dimen>
+    <dimen name="icon_empty_state">96dp</dimen>
+
+    <!-- Leaves room for the bottom navigation bar so the last row is never hidden behind it. -->
+    <dimen name="list_bottom_padding">88dp</dimen>
+</resources>

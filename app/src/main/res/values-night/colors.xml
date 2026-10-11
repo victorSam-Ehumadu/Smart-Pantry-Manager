@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Dark palette. Only the values change; the names match values/colors.xml exactly so
+        no code or layout has to know which mode it is running in.
+    -->
+    <color name="brand_primary">#7ED9AC</color>
+    <color name="brand_primary_dark">#0C3F2A</color>
+    <color name="brand_on_primary">#00391F</color>
+    <color name="brand_accent">#F2B471</color>
+
+    <color name="screen_background">#11140F</color>
+    <color name="surface_card">#1C2019</color>
+    <color name="divider">#333A2F</color>
+    <color name="text_primary">#E3E5DE</color>
+    <color name="text_secondary">#B7BDB0</color>
+
+    <color name="expired">#FFB4AB</color>
+    <color name="expiring_soon">#F5C06A</color>
+    <color name="banner_warning_bg">#3A2E16</color>
+
+    <color name="status_ok">#7ED9AC</color>
+    <color name="status_approximate">#E0C27A</color>
+    <color name="status_missing">#FFB4AB</color>
+
+    <color name="badge_ready_bg">#1E4435</color>
+    <color name="badge_ready_text">#A8E9C8</color>
+    <color name="badge_almost_bg">#45351B</color>
+    <color name="badge_almost_text">#F4D9A8</color>
+</resources>

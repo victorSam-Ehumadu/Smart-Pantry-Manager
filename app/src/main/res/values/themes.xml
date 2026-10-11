@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Material 3 DayNight: the light and dark palettes come from values/colors.xml and
+        values-night/colors.xml, so the app follows the system setting without a second theme
+        file. NoActionBar is used because every screen supplies its own MaterialToolbar.
+    -->
+    <style name="Theme.SmartPantry" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorOnPrimary">@color/brand_on_primary</item>
+        <item name="colorPrimaryContainer">@color/badge_ready_bg</item>
+        <item name="colorOnPrimaryContainer">@color/badge_ready_text</item>
+        <item name="colorSecondary">@color/brand_accent</item>
+        <item name="colorError">@color/expired</item>
+
+        <item name="android:colorBackground">@color/screen_background</item>
+        <item name="colorSurface">@color/surface_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOutlineVariant">@color/divider</item>
+
+        <item name="android:statusBarColor">@color/brand_primary_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Toolbar text sits on the brand colour, so it is forced light in both modes. -->
+    <style name="Widget.SmartPantry.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/brand_primary</item>
+        <item name="titleTextColor">@color/brand_on_primary</item>
+        <item name="subtitleTextColor">@color/brand_on_primary</item>
+        <item name="android:theme">@style/ThemeOverlay.Material3.Dark.ActionBar</item>
+    </style>
+
+    <style name="TextAppearance.SmartPantry.SectionHeading"
+        parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+</resources>

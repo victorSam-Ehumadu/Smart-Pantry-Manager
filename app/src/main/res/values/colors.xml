@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Light palette. Every colour used in code or layouts is named here, so the night
+        variant in values-night/colors.xml only has to override values, never add new names.
+    -->
+
+    <!-- Brand: a deep green for "fresh food", with a warm amber accent. -->
+    <color name="brand_primary">#1B6B4A</color>
+    <color name="brand_primary_dark">#125037</color>
+    <color name="brand_on_primary">#FFFFFF</color>
+    <color name="brand_accent">#E0872B</color>
+
+    <!-- Surfaces and text -->
+    <color name="screen_background">#F6F7F4</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="divider">#E1E4DE</color>
+    <color name="text_primary">#1A1C19</color>
+    <color name="text_secondary">#5C6158</color>
+
+    <!-- Expiry states on the pantry list -->
+    <color name="expired">#B3261E</color>
+    <color name="expiring_soon">#9A5B00</color>
+    <color name="banner_warning_bg">#FFF2DC</color>
+
+    <!-- Per-ingredient verdicts on the recipe detail checklist -->
+    <color name="status_ok">#1B6B4A</color>
+    <color name="status_approximate">#8A6D1F</color>
+    <color name="status_missing">#B3261E</color>
+
+    <!-- Badges: "ready to cook" versus "one ingredient short" -->
+    <color name="badge_ready_bg">#D7EFE2</color>
+    <color name="badge_ready_text">#0F4E34</color>
+    <color name="badge_almost_bg">#FBEBD2</color>
+    <color name="badge_almost_text">#6F4A05</color>
+
+</resources>
