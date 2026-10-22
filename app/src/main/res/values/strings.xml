@@ -119,7 +119,9 @@
     <string name="status_missing">Not in your pantry</string>
     <string name="status_not_enough">You only have %1$s</string>
     <string name="status_approximate">In your pantry, but in a different unit</string>
-    <string name="join_and"> and </string>
+    <!-- Quoted so Android keeps the surrounding spaces; an unquoted resource has its
+         leading and trailing whitespace stripped, which ran the words together. -->
+    <string name="join_and">" and "</string>
 
     <!-- ============================== Settings ============================== -->
     <string name="settings_heading_expiry">Expiry alerts</string>
