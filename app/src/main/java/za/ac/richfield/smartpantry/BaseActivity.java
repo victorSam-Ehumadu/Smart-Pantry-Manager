@@ -63,6 +63,31 @@ public abstract class BaseActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Puts the highlight back on this screen's own tab every time it becomes visible.
+     *
+     * <p>Tapping a tab highlights it immediately, before the next Activity starts. Because
+     * {@code FLAG_ACTIVITY_CLEAR_TOP} reuses an existing instance rather than recreating it,
+     * {@code onCreate()} does not run again on the way back, so that screen would still be
+     * showing the OTHER tab as selected.</p>
+     *
+     * <p>That is worse than it looks: a tab that is already highlighted counts as a
+     * re-selection, and {@code BottomNavigationView} reports those to a different listener,
+     * so the tap would be swallowed and navigation would appear to stop working entirely.
+     * Re-asserting the selection here keeps the highlight honest and the tabs responsive.</p>
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        NavigationBarView navigationBar = findViewById(R.id.bottomNavigation);
+        if (navigationBar != null
+                && navigationBar.getSelectedItemId() != getNavigationMenuItemId()) {
+            // Safe from recursion: the listener returns early when the id it receives is
+            // already this screen's own tab, which is exactly what is being set here.
+            navigationBar.setSelectedItemId(getNavigationMenuItemId());
+        }
+    }
+
     @Nullable
     private Class<?> activityForMenuItem(@IdRes int menuItemId) {
         if (menuItemId == R.id.nav_pantry) {
